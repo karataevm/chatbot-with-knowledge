@@ -25,7 +25,7 @@ export default function Home() {
   }>({
     messages: [
       {
-        message: 'Hi, what would you like to learn about this document?',
+        message: 'Привет, я чат-бот, который поможет тебе найти ответы на вопросы по BI',
         type: 'apiMessage',
       },
     ],
@@ -124,8 +124,8 @@ export default function Home() {
     <>
       <Layout>
         <div className="mx-auto flex flex-col gap-4">
-          <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-center">
-            Chat With Your Docs
+          <h1 className="text-3xl font-bold leading-[1.1] tracking-tighter text-center">
+            BI Group Chat Demo
           </h1>
           <main className={styles.main}>
             <div className={styles.cloud}>
@@ -137,7 +137,7 @@ export default function Home() {
                     icon = (
                       <Image
                         key={index}
-                        src="/bot-image.png"
+                        src="/ai-icon.png"
                         alt="AI"
                         width="40"
                         height="40"
@@ -175,34 +175,37 @@ export default function Home() {
                         </div>
                       </div>
                       {message.sourceDocs && (
-                        <div
-                          className="p-5"
-                          key={`sourceDocsAccordion-${index}`}
-                        >
-                          <Accordion
-                            type="single"
-                            collapsible
-                            className="flex-col"
-                          >
-                            {message.sourceDocs.map((doc, index) => (
-                              <div key={`messageSourceDocs-${index}`}>
-                                <AccordionItem value={`item-${index}`}>
-                                  <AccordionTrigger>
-                                    <h3>Source {index + 1}</h3>
-                                  </AccordionTrigger>
-                                  <AccordionContent>
-                                    <ReactMarkdown linkTarget="_blank">
-                                      {doc.pageContent}
-                                    </ReactMarkdown>
-                                    <p className="mt-2">
-                                      <b>Source:</b> {doc.metadata.source}
-                                    </p>
-                                  </AccordionContent>
-                                </AccordionItem>
-                              </div>
-                            ))}
-                          </Accordion>
-                        </div>
+                        <p className="mt-2 p-5">
+                          <b>Источник:</b> {message.sourceDocs[0].metadata.source}
+                        </p>
+                        // <div
+                        //   className="p-5"
+                        //   key={`sourceDocsAccordion-${index}`}
+                        // >
+                        //   <Accordion
+                        //     type="single"
+                        //     collapsible
+                        //     className="flex-col"
+                        //   >
+                        //     {message.sourceDocs.slice(0, 1).map((doc, index) => (
+                        //       <div key={`messageSourceDocs-${index}`}>
+                        //         <AccordionItem value={`item-${index}`}>
+                        //           <AccordionTrigger>
+                        //             <h3>Источник: {index + 1}</h3>
+                        //           </AccordionTrigger>
+                        //           <AccordionContent>
+                        //             <ReactMarkdown linkTarget="_blank">
+                        //               {doc.pageContent}
+                        //             </ReactMarkdown>
+                        //             <p className="mt-2">
+                        //               <b>Источник:</b> {doc.metadata.source}
+                        //             </p>
+                        //           </AccordionContent>
+                        //         </AccordionItem>
+                        //       </div>
+                        //     ))}
+                        //   </Accordion>
+                        // </div>
                       )}
                     </>
                   );
@@ -224,7 +227,7 @@ export default function Home() {
                     placeholder={
                       loading
                         ? 'Waiting for response...'
-                        : 'What is this legal case about?'
+                        : 'Ask a question about the company?'
                     }
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
@@ -260,11 +263,11 @@ export default function Home() {
             )}
           </main>
         </div>
-        <footer className="m-auto p-4">
+        {/* <footer className="m-auto p-4">
           <a href="https://twitter.com/mayowaoshin">
             Powered by LangChainAI. Demo built by Mayo (Twitter: @mayowaoshin).
           </a>
-        </footer>
+        </footer> */}
       </Layout>
     </>
   );
