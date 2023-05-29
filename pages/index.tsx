@@ -226,8 +226,8 @@ export default function Home() {
                     name="userInput"
                     placeholder={
                       loading
-                        ? 'Waiting for response...'
-                        : 'Ask a question about the company?'
+                        ? 'Обработка запроса...'
+                        : 'Введите вопрос...'
                     }
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
