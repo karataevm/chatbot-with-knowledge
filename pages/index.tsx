@@ -227,7 +227,7 @@ export default function Home() {
                     placeholder={
                       loading
                         ? 'Обработка запроса...'
-                        : 'Введите вопрос...'
+                        : 'Могу ли я оформить ипотеку онлайн?'
                     }
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
