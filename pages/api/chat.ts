@@ -10,7 +10,8 @@ export default async function handler(
   res: NextApiResponse,
 ) {
   const { question, history } = req.body;
-
+  // calculate execution time
+  // const start = Date.now();
   console.log('question', question);
 
   //only accept post requests
@@ -44,10 +45,14 @@ export default async function handler(
     const response = await chain.call({
       question: sanitizedQuestion,
       chat_history: history || [],
+      
     });
 
     // console.log('response', response);
     res.status(200).json(response);
+    // const end = Date.now();
+    // // execution time in seconds
+    // console.log('execution time sec: ', (end - start) / 1000);
   } catch (error: any) {
     console.log('error', error);
     res.status(500).json({ error: error.message || 'Something went wrong' });
