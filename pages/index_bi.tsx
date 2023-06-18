@@ -25,7 +25,7 @@ export default function Home() {
   }>({
     messages: [
       {
-        message: 'Hello, I am a chatbot that will help you find answers to questions about AFSA',
+        message: 'Привет, я чат-бот, который поможет тебе найти ответы на вопросы по BI',
         type: 'apiMessage',
       },
     ],
@@ -125,7 +125,7 @@ export default function Home() {
       <Layout>
         <div className="mx-auto flex flex-col gap-4 ">
           <h1 className="text-3xl font-bold text-center text-gray-100">
-            Welcome to the AFSA Chatbot
+            BI Group Chat Demo
           </h1>
           <main className={styles.main}>
             <div className={styles.cloud}>
@@ -175,12 +175,8 @@ export default function Home() {
                         </div>
                       </div>
                       {message.sourceDocs && (
-                        <p className="mt-2 p-5 text-gray-300">
-                          <b>Verified Sources:{" "}</b>                          
-                          <span className='text-gray-100 bg-gray-600 p-2 rounded-md lowercase'>
-                            {message.sourceDocs[0].metadata.source.replace('/Users/mukhamejankaratyev/Documents/GitHub/custom-chatgpt-test/docs/afsa/', '')}
-                          </span>
-                          
+                        <p className="mt-2 p-5">
+                          <b>Источник:</b> {message.sourceDocs[0].metadata.source}
                         </p>
                         // <div
                         //   className="p-5"
@@ -230,8 +226,8 @@ export default function Home() {
                     name="userInput"
                     placeholder={
                       loading
-                        ? 'Thinking...'
-                        : 'Type your question here and press Enter'
+                        ? 'Обработка запроса...'
+                        : 'Могу ли я оформить ипотеку онлайн?'
                     }
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}

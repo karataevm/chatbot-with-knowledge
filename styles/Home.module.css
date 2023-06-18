@@ -3,7 +3,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
+  
 }
 
 .header {
@@ -12,6 +13,47 @@
 
 .header p {
   text-align: center;
+}
+
+.topnav {
+  background-color: #141619;
+  border-bottom: 1px solid #30373d;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0.75rem 1rem 0.75rem;
+  align-items: center;
+}
+
+.navlogo, .navlinks a {
+  font-weight: 500;
+}
+
+.navlogo {
+  font-size: 1.25rem;
+  margin-left: 1rem;
+}
+
+.navlinks {
+  width: 20rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.apptitle {
+  font-size: 2.5rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+}
+
+.appdescription {
+  font-size: 1.1rem;
+  margin: 1rem;
+}
+
+.link {
+  font-weight: 500;
 }
 
 .cloudform {
@@ -25,9 +67,9 @@
   padding: 1rem 2rem 1rem 2rem;
   width: 75vw;
   border-radius: 0.5rem;
-  border: 1px solid #d9d9e3;
-  background: #ffffff;
-  color: #000;
+  border: 1px solid #30373d;
+  background: #070809;
+  color: #ECECF1;
   outline: none;
 }
 
@@ -35,14 +77,8 @@
   opacity: 0.5;
 }
 
-.textarea:focus {
-  outline: none;
-  border-color: #6b7280;
-  box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.5);
-}
-
 .textarea::placeholder {
-  color: #6b7280;
+  color: #5f6368;
 }
 
 .generatebutton {
@@ -70,7 +106,7 @@
 }
 
 .generatebutton:hover {
-  background: #e4575726;
+  background: #1f2227;
   border-radius: 0.2rem;
 }
 
@@ -95,15 +131,15 @@
 }
 
 .usermessage {
-  background: #ffffff;
+  background: #070809;
   padding: 1.5rem;
-  color: #000;
+  color: #ECECF1;
 }
 
-.usermessagewaiting {
+.usermessagewaiting{
   padding: 1.5rem;
-  color: #000;
-  background: linear-gradient(to left, #07080938, #1a1c2024, #07080936);
+  color: #ECECF1;
+  background: linear-gradient(to left, #070809, #1a1c20, #070809);
   background-size: 200% 200%;
   background-position: -100% 0;
   animation: loading-gradient 2s ease-in-out infinite;
@@ -121,25 +157,20 @@
 }
 
 .apimessage {
-  background: #f9fafb;
+  background: #141619;
   padding: 1.5rem;
-  color: #000;
+  color: #ECECF1;
   animation: fadein 0.5s;
 }
 
 @keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-.apimessage,
-.usermessage,
-.usermessagewaiting {
+.apimessage, .usermessage, .usermessagewaiting {
   display: flex;
+  align-items: center;
 }
 
 .markdownanswer {
@@ -151,7 +182,7 @@
 }
 
 .markdownanswer a {
-  color: #b13a3a;
+  color: #16bed7;
   font-weight: 500;
 }
 
@@ -161,39 +192,35 @@
   white-space: pre-wrap !important;
 }
 
-.markdownanswer ol,
-.markdownanswer ul {
+.markdownanswer ol, .markdownanswer ul {
   margin: 1rem;
 }
 
-.boticon,
-.usericon {
+.boticon, .usericon {
   margin-right: 1rem;
   border-radius: 0.1rem;
-  height: 100%;
 }
 
-.markdownanswer h1,
-.markdownanswer h2,
-.markdownanswer h3 {
+.markdownanswer h1, .markdownanswer h2, .markdownanswer h3 {
   font-size: inherit;
 }
+
 
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 1rem 0;
+  padding: 2rem 0;
   flex-direction: column;
 }
 
 .cloud {
   width: 75vw;
   height: 65vh;
-  background: #ffffff;
+  background: #070809;
   border-radius: 0.5rem;
-  border: 1px solid #d9d9e3;
+  border: 1px solid #30373d;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -227,6 +254,7 @@
 
 /* Mobile optimization */
 @media (max-width: 600px) {
+
   .main {
     padding: 1rem;
     max-height: 90vh;
@@ -245,18 +273,18 @@
     padding: 0.85rem 0.75rem 0.85rem 0.75rem;
   }
 
-  .navlogo {
-    font-size: 1.25rem;
-    width: 20rem;
-  }
+.navlogo {
+  font-size: 1.25rem;
+  width: 20rem;
+}
 
-  .markdownanswer code {
-    white-space: pre-wrap !important;
-  }
+.markdownanswer code {
+  white-space : pre-wrap !important;
+}
 
-  .footer {
-    font-size: 0.7rem;
-    width: 100%;
-    text-align: center;
-  }
+.footer {
+  font-size: 0.7rem;
+  width: 100%;
+  text-align: center;
+}
 }
